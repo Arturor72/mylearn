@@ -1,0 +1,91 @@
+# Principios SOLID
+* S: Single Responsability Principle
+* O: Open closed principle
+* L: Liskov substitution principle
+* I: Interface segregation principle
+* D: Dependency inversion principle
+
+STUPID
+* S: Singleton (Mal uso del patron) *
+* T: Tight Coupling (Fuertemente acoplado) usar implementaciones concretas.
+* U: Untestability 
+* P: Premature Optimization 
+* I: Indescriotive Naming
+* D: Duplication
+
+
+UML: Las partes buenas
+* Ilustrativo
+* Riguroso
+* Agnostico
+
+* Casos de uso -> Secuencia -> Diagrama de clases 
+ 
+## Principio de Responsabilidad Unica
+
+Una clase = Un concepto y responsabilidad
+Una clase deberia tener solo 1 razon para cambiar
+
+Como: 
+* Clases de servicios peque;as con objetivos acotados
+
+Finalidad:
+* Alta cohesion y robustez
+* Permitir composicion de clases
+* Evitar duplicidad
+
+Niveles de granularidad
+* Order | User: son modelos de dominio, no servicios
+* OrderAnalyzer | OrderProcessor: Terminos genericos llevan a mas de 1 responsabilidad -> OrdertrustabilityChecker | OrderMarginCalculator
+
+Code Smell: Verificar cantidad de metodos publicos
+
+## Principio de abierto cerrado 
+
+El software deberia estar abierto a extension y cerrado a modificacion 
+
+Como: 
+* No depender de implementaciones especificas.
+
+FInalidad:
+* Facilidad de agregar nuevos casos de uso.
+
+## Principio de sustitucion de Liskov
+
+Si S es un subtipo de T, instancias de T deberian poderse sustituir por
+instancias de S sin alterar las propiedades del programa.
+
+Como: 
+* El comportamiento de subclases debe respetar el contrato de la superclase
+
+FInalidad:
+* Mantener correctitud para poder aplicar OCP.
+
+## Principio de segregacion de interfaces
+
+Ningun cliente deberia verse forzado a depender de metodos que no usa
+
+Como:
+* Definir contratos de interfaces basandonos en los clientes que las usan y no en las implementaciones que pudieramos tener.
+
+Finalidad
+
+* Alta cohesion y bajo acoplamiento.
+* Las interfaces pertenecen a los clientes y no a quienes lo implementan.
+
+## Principio de inyeccion de dependencias.
+
+Modulos de alto nivel no deberian depender de los de bajo nivel. Ambos deberian depender de abstracciones.
+
+Como: 
+* Inyectar dependencias (parametros recibidos en el constructor)
+* Depender de las interfaces (contratos) de estas dependencias y no de las implementaciones concretas.
+* LSP como premisa.
+
+Finalidad
+* Facilitar la modificacion y substitucion de interfaces
+* Mejorar testabilidad de clases.
+
+
+
+
